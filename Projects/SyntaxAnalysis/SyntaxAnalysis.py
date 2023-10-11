@@ -8,14 +8,14 @@ class SyntaxMatrix(VoiceoverScene):
 
     def opening_animation(self):
         # opening animation
-        self.add_sound("media/audio/mixkit-air-woosh-1489.wav", time_offset=1)
+        self.add_sound("../../media/audio/mixkit-air-woosh-1489.wav", time_offset=1)
         self.play(FadeIn(self.icon))
         self.play(self.icon.animate.shift(1.5 * UP))
         self.wait(0.5)
         course = Tex("Husky  ","Course Time")
         course[1].set_color(BLUE)
         self.play(Write(course[0], run_time=.7), Write(course[1], run_time=.7))
-        self.add_sound("media/audio/mixkit-dog-barking-twice-1.wav", gain=1)
+        self.add_sound("../../media/audio/mixkit-dog-barking-twice-1.wav", gain=1)
         self.wait(0.5)
         u = Underline(course[1], color=WHITE)  # underline
         self.play(Create(u, run_time=.7))
@@ -585,7 +585,7 @@ class SyntaxMatrix(VoiceoverScene):
     def ending(self):
         self.play(self.icon.animate.to_edge(UP, buff=1))
         listing = Code(
-            "husky.py",
+            "../../husky.py",
             tab_width=4,
             background_stroke_width=1,
             background_stroke_color=WHITE,
@@ -595,7 +595,7 @@ class SyntaxMatrix(VoiceoverScene):
             font_size=20,
             language="python",
         )
-        self.add_sound("media/audio/mixkit-dog-barking-twice-1.wav", gain=1)
+        self.add_sound("../../media/audio/mixkit-dog-barking-twice-1.wav", gain=1)
         self.play(Write(listing,run_time=5))
         self.wait(4)
         self.play(FadeOut(listing,self.icon))
